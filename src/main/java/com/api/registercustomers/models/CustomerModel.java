@@ -7,7 +7,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
@@ -23,11 +22,9 @@ public class CustomerModel implements Serializable{
 	@Column(nullable = false, length = 60)
 	private String sobrenome;
 	@Column(nullable = false, length = 3)
-	private int idade;
+	private String idade;
 	@Column(nullable = false, length = 20)
 	private String tipoCustomer;
-	@Column(nullable = false)
-	private LocalDate dataNascimento;
 	
 	public UUID getId() {
 		return id;
@@ -47,10 +44,10 @@ public class CustomerModel implements Serializable{
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
-	public int getIdade() {
+	public String getIdade() {
 		return idade;
 	}
-	public void setIdade(int idade) {
+	public void setIdade(String idade) {
 		this.idade = idade;
 	}
 	public String getTipoCustomer() {
@@ -58,12 +55,6 @@ public class CustomerModel implements Serializable{
 	}
 	public void setTipoCustomer(String tipoCustomer) {
 		this.tipoCustomer = tipoCustomer;
-	}
-	public LocalDate getDataNascimento() {
-		return dataNascimento;
-	}
-	public void setDataNascimento(LocalDate dataNascimento) {
-		this.dataNascimento = dataNascimento;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
